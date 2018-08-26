@@ -1,0 +1,38 @@
+{
+  "name": "classify",
+  "version": "0.0.1",
+  "description": "CLI to classify an image using machine learning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "classify": "./index.js"
+  },
+  "author": "Hawkeye64 <jeff.galbraith@xendra.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "homepage": "https://github.com/hawkeye64/classify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawkeye64/classify.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "classify",
+    "classification",
+    "machine learning",
+    "tensorflow",
+    "opencv",
+    "opencv4nodejs",
+    "cli"
+  ],
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
+    "opencv4nodejs": "^4.7.2"
+  }
+}

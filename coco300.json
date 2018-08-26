@@ -1,0 +1,8 @@
+{
+  "name": "coco300",
+  "size": 300,
+  "path": "./models/models_VGGNet_coco_SSD_300x300",
+  "prototxt": "deploy.prototxt",
+  "modelFile": "VGG_coco_SSD_300x300_iter_400000.caffemodel",
+  "classes": "coco_types.txt"
+}

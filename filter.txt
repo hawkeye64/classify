@@ -1,0 +1,14 @@
+bear
+bicycle
+bird
+bus
+car
+cat
+cow
+dog
+horse
+motorcycle
+person
+sheep
+train
+truck

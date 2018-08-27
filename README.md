@@ -4,15 +4,16 @@ CLI for Neural Network image classification using Coco model.
 This package is written to be used as a Node command-line interface (CLI).
 
 ## Example Classification
-![Unclassified Bicycle](images/test/bicycle.jpg?raw=true "Unclassified Bicycle")
-![Classified Bicycle](images/results/bicycle_classified_coco300_30.jpg?raw=true "Classified Bicycle")
+![Unclassified Bicycle](https://github.com/hawkeye64/classify/blob/master/images/test/bicycle.jpg?raw=true)
+![Classified Bicycle](https://github.com/hawkeye64/classify/blob/master/images/results/bicycle_classified_coco300_30.jpg?raw=true)
+
 
 ## Pre-Installation
-This package uses opencv4nodejs which downloads and compiled opencv into Node.
+This package uses [opencv4nodejs](https://github.com/justadudewhohacks/opencv4nodejs/tree/master/examples) which downloads and compiles opencv into Node.
 
 Make sure you have **cmake** installed and available on your path or the build will fail.
 
-To verify cmake, run:
+To verify **cmake**, run:
 
 ```command -v cmake```
 
@@ -30,16 +31,25 @@ $
 ```
 
 ## Installation
-Note: Not available via npm (yet!)
+>_**Note: Not available via npm (yet!)**_
 
 ```npm i -g classify```
 
 This installs it globally into your Node ecosystem and makes it available on your path.
 
 ## Back Story
-This is my first foray into **Classification** with **Neural Networks**. Another programmer at work did something similar in Python. I wanted to know if it was at all possible to do the same thing with Node. I found **tensorflow.js** and then **tfjs-node** (tensorflow for node), but had issues getting models converted to a web-friendly format for it to work. Then I found **opencv4nodejs** and after that things fell into place. This cli project is the results of that endeavor. Feel free to add PRs if you would like it updated.
+This is my first foray into **Classification** with **Neural Networks**. Another programmer at work did something similar in Python. I wanted to know if it was at all possible to do the same thing with Node. I found **tensorflow.js** and then **tfjs-node** (tensorflow for node), but had issues getting models converted to a web-friendly format for it to work. Then I found **opencv4nodejs** and this article [Node.js meets OpenCV's Deep Neural Networks -- Fun with Tensorflow and Caffe](https://medium.com/@muehler.v/node-js-meets-opencvs-deep-neural-networks-fun-with-tensorflow-and-caffe-ff8d52a0f072). After that things fell into place. This cli project is the results of that endeavor. Feel free to add PRs if you would like it updated.
 
-## Options
+I am by no means an expert in this area. I am still learning (and there is a **LOT** to learn!). If asked, it's unlikely I'll be able to answer specific questions about Neural Networks or OpenCV.
+
+## Issues (large files)
+Aside from the programming of the CLI, the biggest issue I found was uploading the models to Github. In order to have large file support, you must install [git-lfs](https://git-lfs.github.com/). I still ran into problems pushing the large files (being asked for username/password, which would fail), until I found that you also have to do this:
+```
+git remote set-url origin git@github.com:username/repo.git
+```
+It still took a (very!) long time to upload the project.
+
+## CLI Options
 Running **classify** from the command-line will output the following:
 
 **classify**
@@ -68,7 +78,7 @@ Classifies an image using machine learning from passed in image path.
 ## Filter
 **--filter** or **-f** followed by a path to the filter file. 
 
-A filter file contains only the interested items from the model that you might be interested in classifying. It contains one item per line. There should be no empty lines or comments.
+A filter file contains only the interested items from the model that you want classified. It contains one item per line. There should be no empty lines or comments.
 
 **Example**
 ```
@@ -88,7 +98,7 @@ train
 truck
 ```
 ## Quick
-**--quick** or **-q** specifies to use the 300x300 Coco SSD instead of the 512x512. The 300x300 is faster, but may come at the cost of less classified items.
+**--quick** or **-q** specifies to use the 300x300 Coco SSD instead of the 512x512 Coco SSD. The 300x300 is faster, but may come at the cost of less accuracy in classified items.
 
 ## Version
 **--version** or **-v** outputs the curent version.
@@ -115,20 +125,21 @@ So, `bicycle.jpg` becomes `bicycle_classified_coco300_30.jpg`, with the latter c
 
 
 ## More Examples
-![Unclassified Royals](images/test/royals.jpg?raw=true "Unclassified Royals")
-![Classified Royals](images/results/royals_classified_coco512_30.jpg?raw=true "Classified Royals")
+![Unclassified Royals](https://github.com/hawkeye64/classify/blob/master/images/test/royals.jpg?raw=true)
+![Classified Royals](https://github.com/hawkeye64/classify/blob/master/images/results/royals_classified_coco512_30.jpg?raw=true)
 
-![Unclassified Train](images/test/train.jpg?raw=true "Unclassified Train")
-![Classified Train](images/results/train_classified_coco512_50.jpg?raw=true "Classified Train")
+![Unclassified Train](https://github.com/hawkeye64/classify/blob/master/images/test/train.jpg?raw=true)
+![Classified Train](https://github.com/hawkeye64/classify/blob/master/images/results/train_classified_coco512_50.jpg?raw=true)
+
 
 ## Too Many Classifications
 If you have an image with a lot of "action", consider filtering using the **--filter** parameter or at least the **--confidence** parameter.
 
 This is what a classification looks like without either:
 
-![No Filtering](images/results/snapshot_001_classified_coco512_0.jpg?raw=true "No Filtering")
+![No Filtering](https://github.com/hawkeye64/classify/blob/master/images/results/snapshot_001_classified_coco512_0.jpg?raw=true)
+
 
 And, what it looks like after filtering:
 
-![No Filtering](images/results/snapshot_001_classified_coco512_30.jpg?raw=true "No Filtering")
-
+![Filtered](https://github.com/hawkeye64/classify/blob/master/images/results/snapshot_001_classified_coco512_30.jpg?raw=true)

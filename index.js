@@ -121,7 +121,7 @@ const predict = (img) => {
   const white = new cv.Vec(255, 255, 255)
 
   // resize to model size
-  const theImage = img.resize(modelData.size, modelData.size).padToSquare(white)
+  const theImage = img.resizeToMax(modelData.size, modelData.size).padToSquare(white)
 
   // network accepts blobs as input
   const inputBlob = cv.blobFromImage(theImage)
@@ -238,7 +238,6 @@ if ('version' in options) {
 }
 
 let imagePath
-
 // check for path
 if ('image' in options) {
   imagePath = options.image
@@ -253,7 +252,7 @@ if (!fs.existsSync(imagePath)) {
   process.exit(2)
 }
 
-let availableModels = ['coco', 'inception']
+let availableModels = ['coco']
 let model = 'coco' // default
 if ('model' in options) {
   model = options.model
@@ -265,7 +264,7 @@ if (!availableModels.includes(model)) {
   process.exit(1)
 }
 
-let confidence = 30
+let confidence = 50 // default
 if ('confidence' in options) {
   confidence = options.confidence
 }

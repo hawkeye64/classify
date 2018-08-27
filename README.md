@@ -31,8 +31,6 @@ $
 ```
 
 ## Installation
->_**Note: Not available via npm (yet!)**_
-
 ```npm i -g classify```
 
 This installs it globally into your Node ecosystem and makes it available on your path.

@@ -31,9 +31,26 @@ $
 ```
 
 ## Installation
+Apparently, this project is too big for `npm` and it crashes with javascript `out of heap` error when trying to upload it to the registry.
+
+So, instead of:
 ```npm i -g classify```
 
+You need to download the project from Github (this may be lengthy because of the size). Then run:
+
+```npm install```
+
+Then run:
+
+```npm -g classify```
+
+To install the package globally.
+
 This installs it globally into your Node ecosystem and makes it available on your path.
+
+Now you can run it like so:
+
+```classify --image <path to image> --confidence 50```
 
 ## Back Story
 This is my first foray into **Classification** with **Neural Networks**. Another programmer at work did something similar in Python. I wanted to know if it was at all possible to do the same thing with Node. I found **tensorflow.js** and then **tfjs-node** (tensorflow for node), but had issues getting models converted to a web-friendly format for it to work. Then I found **opencv4nodejs** and this article [Node.js meets OpenCV's Deep Neural Networks -- Fun with Tensorflow and Caffe](https://medium.com/@muehler.v/node-js-meets-opencvs-deep-neural-networks-fun-with-tensorflow-and-caffe-ff8d52a0f072). After that things fell into place. This cli project is the results of that endeavor. Feel free to add PRs if you would like it updated.

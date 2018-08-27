@@ -355,9 +355,6 @@ let net
 if (dataFile === 'coco300' || dataFile === 'coco512') {
   net = cv.readNetFromCaffe(prototxt, modelFile)
 }
-// else {
-//   net = cv.readNetFromTensorflow(modelFile)
-// }
 
 // read the image
 const img = cv.imread(imagePath)

@@ -1,5 +1,5 @@
 # classify
-CLI for node classification
+CLI for Neural Network image classification using Coco model.
 
 This package is written to be used as a Node command-line interface (CLI).
 

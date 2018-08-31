@@ -42,7 +42,7 @@ You need to download the project from Github (this may be lengthy because of the
 
 Then run:
 
-```npm -g classify```
+```npm i -g . classify```
 
 To install the package globally.
 
